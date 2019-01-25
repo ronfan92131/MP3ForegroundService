@@ -1,0 +1,18 @@
+1 launch app to mainActivity
+2019-01-21 23:01:18.374 7773-7773/com.example.mp3wforegroundservice D/MP3_ NotificationApp: onCreate
+2019-01-21 23:01:18.456 7773-7773/com.example.mp3wforegroundservice D/MP3_ MainActivity: onCreate
+2. click startService button
+2019-01-21 23:01:27.393 7773-7773/com.example.mp3wforegroundservice D/MP3_ MainActivity: startService
+2019-01-21 23:01:27.395 7773-7773/com.example.mp3wforegroundservice D/MP3_ MainActivity: startMP3Player
+2019-01-21 23:01:27.445 7773-7773/com.example.mp3wforegroundservice D/MP3_ ForegroundService: onCreate
+2019-01-21 23:01:27.450 7773-7773/com.example.mp3wforegroundservice D/MP3_ ForegroundService: startForeground
+3. click stopService Button
+2019-01-21 23:04:32.365 7773-7773/com.example.mp3wforegroundservice D/MP3_ MainActivity: stopService
+2019-01-21 23:04:32.366 7773-7773/com.example.mp3wforegroundservice D/MP3_ MainActivity: stopMP3Player
+2019-01-21 23:04:32.401 7773-7773/com.example.mp3wforegroundservice D/MP3_ ForegroundService: onDestroy
+
+4. start another app, so mp3 in background. keep playing
+5. delete the app in the background history stack, still kepp playing.
+6. drag down notification bar, click on "MP3wForegroundService"
+   click "ForceStop" and then OK, service is killed!
+   but stopService routines were not executed -- a not so nice exit routine :( :(
