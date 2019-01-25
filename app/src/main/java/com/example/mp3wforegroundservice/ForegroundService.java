@@ -21,10 +21,6 @@ public class ForegroundService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-       // return super.onStartCommand(intent, flags, startId);
-
-        String input = intent.getStringExtra("inputExtra");
-
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0
@@ -32,15 +28,12 @@ public class ForegroundService extends Service {
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Foreground Serviee")
-                .setContentText(input)
                 .setContentIntent(pendingIntent)
                 .build();
-
 
         Log.d(TAG, "startForeground");
         //startService(notificationIntent);  // android os may kill it when in background over 1 min
         startForeground(1, notification);  //for long running service, even app is gone
-
         return START_NOT_STICKY;
     }
 

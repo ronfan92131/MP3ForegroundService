@@ -6,7 +6,6 @@ import android.app.NotificationManager;
 import android.os.Build;
 import android.util.Log;
 
-//this module is to create a notification chanel
 public class NotificationApp extends Application {
     public static final String TAG = "MP3_ NotificationApp";
     public static final String CHANNEL_ID = "MP3_ NotificationApp";
